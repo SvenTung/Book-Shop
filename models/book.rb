@@ -16,4 +16,11 @@ class Book
     @pic_link = details['pic_link']
   end
 
+  def save
+    sql = 'INSERT INTO books name VALUES $1 RETURNING id'
+    values = [@name]
+    book = SqlRunner.run(sql, values).first()
+    @id = book['id'].to_i
+  end
+
 end
