@@ -1,0 +1,13 @@
+<h1>All books in database</h1>
+<hr />
+
+<% for book in @books %>
+
+  <p>Title: <%= book.title %></p>
+  <p>Author: <%= book.find_author_name %></p>
+  <p>Genre: <%= book.genre %></p>
+  <p><a href="/books/<%= book.id %>"></a></p>
+  <p><%= book.description %></p>
+
+  <hr />
+<% end %>

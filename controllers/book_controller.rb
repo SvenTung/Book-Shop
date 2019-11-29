@@ -7,6 +7,11 @@ get '/books' do
   erb(:"books/index")
 end
 
+get '/books/table' do
+  @books = Book.all
+  erb(:"books/index_table")
+end
+
 #new
 get '/books/new' do
   @authors = Author.all
@@ -16,9 +21,11 @@ end
 #show
 get '/books/:id' do
   id = params[:id].to_i()
-  @book = Book.find_by_id(id)
+  @books = Book.find_by_id(id)
   erb(:"books/show")
 end
+
+
 
 #create
 #edit

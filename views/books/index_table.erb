@@ -1,0 +1,19 @@
+<h1>All books in the database</h1>
+
+<table>
+  <tr>
+    <th>Title:</th>
+    <th>Author:</th>
+    <th>Genre:</th>
+    <th>Description:</th>
+  </tr>
+
+  <% for book in @books %>
+    <tr>
+      <td><%= book.title %></td>
+      <td><%= book.find_author_name %></td>
+      <td><%= book.genre %></td>
+      <td><%= book.description %></td>
+    </tr>
+  <% end %>
+</table>
