@@ -28,4 +28,14 @@ class TestBook < Minitest::Test
     assert_equal(10.99,@book1.selling_price)
     assert_equal('',@book1.pic_link)
   end
+
+  def test_can_alter_title
+    @book1.title = 'The Freak Circus'
+    assert_equal('The Freak Circus', @book1.title)
+  end
+
+  def test_can_alter_description
+    @book1.description = 'A horror novel by Darren Shan that follows a young teenager called Darren and his encounter with a vampire at a freak show.'
+    assert_equal('A horror novel by Darren Shan that follows a young teenager called Darren and his encounter with a vampire at a freak show.',@book1.description)
+  end
 end
