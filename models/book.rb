@@ -23,7 +23,7 @@ class Book
 
   def save()
     sql = 'INSERT INTO books (title, author_id, description, stock, buying_cost, selling_price, pic_link) VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING id'
-    values = [@title, @author_id, @description, @stock  , @buying_cost, @selling_price, @pic_link]
+    values = [@title, @author_id, @description, @stock , @buying_cost, @selling_price, @pic_link]
     book = SqlRunner.run(sql, values).first()
     @id = book['id'].to_i
   end
@@ -53,14 +53,14 @@ class Book
 
   def self.find_by_title(title)
     sql = 'SELECT * FROM books WHERE title = $1'
-    values = [@title]
+    values = [title]
     book = SqlRunner.run(sql, values).first
     return Book.new(book)
   end
 
   def self.find_by_id(id)
     sql = 'SELECT * FROM books WHERE id = $1'
-    values = [@id]
+    values = [id]
     book = SqlRunner.run(sql, values).first
     return Book.new(book)
   end

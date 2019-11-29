@@ -13,7 +13,7 @@ CREATE TABLE books(
   author_id INT REFERENCES authors (id) ON DELETE CASCADE,
   description VARCHAR,
   stock INT,
-  buying_cost INT,
-  selling_price INT,
+  buying_cost FLOAT,
+  selling_price FLOAT,
   pic_link VARCHAR
 );
