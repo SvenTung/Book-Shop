@@ -19,5 +19,13 @@ class TestBook < Minitest::Test
       assert_equal('Cirque Du Freak', @book1.title)
   end
 
-  def test_
+  def test_can_read_details
+    assert_equal('Cirque Du Freak', @book1.title)
+    assert_equal(1,@book1.author_id)
+    assert_equal('A horror novel that follows a young teenager called Darren and his encounter with a vampire at a freak show.',@book1.description)
+    assert_equal(8,@book1.stock)
+    assert_equal(8.99,@book1.buying_cost)
+    assert_equal(10.99,@book1.selling_price)
+    assert_equal('',@book1.pic_link)
+  end
 end
