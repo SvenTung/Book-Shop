@@ -1,11 +1,18 @@
 DROP TABLE IF EXISTS books;
 DROP TABLE IF EXISTS authors;
+DROP TABLE IF EXISTS shops;
+
+CREATE TABLE shops(
+  id SERIAL PRIMARY KEY,
+  name VARCHAR,
+  address VARCHAR,
+  register_cash FLOAT
+);
 
 CREATE TABLE authors(
   id SERIAL PRIMARY KEY,
   name VARCHAR
 );
-
 
 CREATE TABLE books(
   id SERIAL PRIMARY KEY,
