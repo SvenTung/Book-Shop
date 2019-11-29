@@ -4,12 +4,13 @@ require_relative './author'
 class Book
 
   attr_reader :id, :author_id
-  attr_accessor :title, :description, :stock, :buying_cost, :selling_price, :pic_link
+  attr_accessor :title, :genre, :description, :stock, :buying_cost, :selling_price, :pic_link
 
   def initialize(details)
     @id = details['id'].to_i
     @title = details['title']
     @author_id = details['author_id'].to_i
+    @genre = details['genre']
     @description = details['description']
     @stock = details['stock'].to_i
     @buying_cost = details['buying_cost'].to_f
@@ -22,8 +23,8 @@ class Book
   end
 
   def save()
-    sql = 'INSERT INTO books (title, author_id, description, stock, buying_cost, selling_price, pic_link) VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING id'
-    values = [@title, @author_id, @description, @stock , @buying_cost, @selling_price, @pic_link]
+    sql = 'INSERT INTO books (title, author_id, genre, description, stock, buying_cost, selling_price, pic_link) VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING id'
+    values = [@title, @author_id, @genre, @description, @stock, @buying_cost, @selling_price, @pic_link]
     book = SqlRunner.run(sql, values).first()
     @id = book['id'].to_i
   end
@@ -31,7 +32,7 @@ class Book
   def self.all()
     sql = 'SELECT * FROM books'
     books_array = SqlRunner.run(sql)
-    map_books(books_array)
+    return map_books(books_array)
   end
 
   def self.delete_all
@@ -40,8 +41,8 @@ class Book
   end
 
   def update()
-    sql = 'UPDATE books SET (title, author_id, description, stock, buying_cost, selling_price, pic_link) = ($1, $2, $3, $4, $5, $6, $7) WHERE id = $8'
-    values = [@title, @author_id, @description, @stock, @buying_cost, @selling_price, @pic_link, @id ]
+    sql = 'UPDATE books SET (title, author_id, genre, description, stock, buying_cost, selling_price, pic_link) = ($1, $2, $3, $4, $5, $6, $7, $8) WHERE id = $9'
+    values = [@title, @author_id, @genre, @description, @stock, @buying_cost, @selling_price, @pic_link, @id]
     SqlRunner.run(sql, values)
   end
 
@@ -63,6 +64,20 @@ class Book
     values = [id]
     book = SqlRunner.run(sql, values).first
     return Book.new(book)
+  end
+
+  def self.find_by_genre(genre)
+    sql = 'SELECT * FROM books WHERE genre = $1'
+    values = [genre]
+    books_array = SqlRunner.run(sql, values)
+    return Book.map_books(books_array)
+  end
+
+  def find_other_books_in_same_genre
+    sql = 'SELECT * FROM books WHERE genre = $1 EXCEPT SELECT * FROM books WHERE id = $2'
+    values = [@genre, @id]
+    books_array = SqlRunner.run(sql, values)
+    return Book.map_books(books_array)
   end
 
   def find_author

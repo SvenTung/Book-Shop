@@ -16,7 +16,7 @@ class Shop
   def sell(item, amount_sold)
     if item.stock >= amount_sold
       item.stock -= amount_sold
-      # book.update
+      item.update
       @register_cash += (amount_sold * item.selling_price)
     else
       puts ("Not enough left in stock to be sold")
@@ -26,6 +26,7 @@ class Shop
   def buy(item, amount_bought)
     if @register_cash >= (item.buying_cost * amount_bought)
       item.stock += amount_bought
+      item.update
       @register_cash -= (item.buying_cost * amount_bought)
     else
       puts ("Not enough cash left in register to buy that")

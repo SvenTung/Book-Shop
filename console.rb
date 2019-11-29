@@ -20,6 +20,7 @@ author2.save
 book1 = Book.new({
   'title' => 'Cirque Du Freak',
   'author_id' => author1.id,
+  'genre' => 'Horror',
   'description' => 'A horror novel that follows a young teenager called Darren and his encounter with a vampire at a freak show.',
   'stock' => 8,
   'buying_cost' => 8.99,
@@ -32,6 +33,7 @@ book1.save
 book2 = Book.new({
   'title' => "The Vampire's Assistant",
   'author_id' => author1.id,
+  'genre' => 'Horror',
   'description' => 'Darren now a half-vampire finds himself in the world of the supernatural. Follow him and his adventures with Mr Crepsley as he comes to term with what he is now.',
   'stock' => 4,
   'buying_cost' => 9.99,
@@ -44,6 +46,7 @@ book2.save
 book3 = Book.new({
   'title' => 'Mister Monday',
   'author_id' => author2.id,
+  'genre' => 'Fantasy',
   'description' => 'This novel follows Arthur Penhaligon, a young teenager who receives a key and enters another world filled with other beings and enemies that seek to steal back the key.',
   'stock' => 7,
   'buying_cost' => 7.99,
