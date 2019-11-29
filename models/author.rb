@@ -13,7 +13,7 @@ class Author
     return authors_array.map{|author_hash| Author.new(author_hash)}
   end
 
-  def save
+  def save()
     sql = 'INSERT INTO authors name VALUES $1 RETURNING id'
     values = [@name]
     author = SqlRunner.run(sql, values).first()
@@ -24,5 +24,11 @@ class Author
     sql = 'SELECT * FROM authors'
     authors_array = SqlRunner.run(sql)
     map_authors(authors_array)
+  end
+
+  def update()
+    sql = 'UPDATE authors SET name = $1 WHERE id = $2'
+    values = [@name, @id]
+    SqlRunner.run(sql, values)
   end
 end

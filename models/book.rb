@@ -20,7 +20,7 @@ class Book
     return books_array.map{|book_hash| Book.new(book_hash)}
   end
 
-  def save
+  def save()
     sql = 'INSERT INTO books name VALUES $1 RETURNING id'
     values = [@name]
     book = SqlRunner.run(sql, values).first()
@@ -32,5 +32,12 @@ class Book
     books_array = SqlRunner.run(sql)
     map_books(books_array)
   end
+
+  def update()
+    sql = 'UPDATE books SET (title, author_id, description, stock, buying_cost, selling_price, pic_link) = ($1, $2, $3, $4, $5, $6, $7) WHERE id = $8'
+    values = [@title, @author_id, @description, @stock, @buying_cost, @selling_price, @pic_link, @id ]
+    SqlRunner.run(sql, values)
+  end
+
 
 end
