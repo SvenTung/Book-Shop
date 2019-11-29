@@ -36,4 +36,25 @@ class Author
     values = [@name, @id]
     SqlRunner.run(sql, values)
   end
+
+  def delete
+    sql = 'DELETE FROM authors WHERE id = $1'
+    values = [@id]
+    SqlRunner.run(sql, values)
+  end
+
+  def self.find_by_name(name)
+    sql = 'SELECT * FROM authors WHERE name = $1'
+    values = [@name]
+    author = SqlRunner.run(sql, values).first
+    return Author.new(author)
+  end
+
+  def self.find_by_id(id)
+    sql = 'SELECT * FROM authors WHERE id = $1'
+    values = [@id]
+    author = SqlRunner.run(sql, values).first
+    return Author.new(author)
+  end
+
 end
