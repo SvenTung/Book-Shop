@@ -1,5 +1,5 @@
 require_relative './models/author'
-require_realtive './models/book'
+require_relative './models/book'
 require 'pry'
 
 Book.delete_all

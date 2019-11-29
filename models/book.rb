@@ -22,8 +22,8 @@ class Book
   end
 
   def save()
-    sql = 'INSERT INTO books name VALUES $1 RETURNING id'
-    values = [@name]
+    sql = 'INSERT INTO books (title) VALUES ($1) RETURNING id'
+    values = [@title]
     book = SqlRunner.run(sql, values).first()
     @id = book['id'].to_i
   end

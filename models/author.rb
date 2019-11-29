@@ -16,7 +16,7 @@ class Author
   end
 
   def save()
-    sql = 'INSERT INTO authors name VALUES $1 RETURNING id'
+    sql = 'INSERT INTO authors (name) VALUES ($1) RETURNING id'
     values = [@name]
     author = SqlRunner.run(sql, values).first()
     @id = author['id'].to_i
