@@ -6,7 +6,7 @@ class TestShop < Minitest::Test
 
   def setup
     @shop1 = Shop.new({
-      'name' => "Brandson's Bookshop",
+      'name' => "Branson's Bookshop",
       'address' => "97 High Street",
       'register_cash' => 75
     })
@@ -23,7 +23,7 @@ class TestShop < Minitest::Test
   end
 
   def test_create
-    assert_equal("Brandson's Bookshop", @shop1.name)
+    assert_equal("Branson's Bookshop", @shop1.name)
   end
 
   def test_sell
