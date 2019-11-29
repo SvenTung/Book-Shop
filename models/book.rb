@@ -33,6 +33,11 @@ class Book
     map_books(books_array)
   end
 
+  def self.delete_all
+    sql = 'DELETE FROM books'
+    SqlRunner.run(sql)
+  end
+
   def update()
     sql = 'UPDATE books SET (title, author_id, description, stock, buying_cost, selling_price, pic_link) = ($1, $2, $3, $4, $5, $6, $7) WHERE id = $8'
     values = [@title, @author_id, @description, @stock, @buying_cost, @selling_price, @pic_link, @id ]

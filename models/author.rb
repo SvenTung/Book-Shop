@@ -26,6 +26,11 @@ class Author
     map_authors(authors_array)
   end
 
+  def self.delete_all
+    sql = 'DELETE FROM authors'
+    SqlRunner.run(sql)
+  end
+
   def update()
     sql = 'UPDATE authors SET name = $1 WHERE id = $2'
     values = [@name, @id]
