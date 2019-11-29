@@ -29,5 +29,24 @@ class TestShop < Minitest::Test
   def test_sell
     @shop1.sell(@book1, 2)
     assert_equal(6, @book1.stock)
+    assert_equal(96.98, @shop1.register_cash)
+  end
+
+  def test_sell_not_enough_books
+    @shop1.sell(@book1, 10)
+    assert_equal(8, @book1.stock)
+    assert_equal(75, @shop1.register_cash)
+  end
+
+  def test_buy
+    @shop1.buy(@book1, 4)
+    assert_equal(12, @book1.stock)
+    assert_equal(39.04, @shop1.register_cash)
+  end
+
+  def test_buy_not_enough_cash
+    @shop1.buy(@book1, 10)
+    assert_equal(8, @book1.stock)
+    assert_equal(75, @shop1.register_cash)
   end
 end
