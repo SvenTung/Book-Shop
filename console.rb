@@ -52,3 +52,6 @@ book3 = Book.new({
 })
 
 book3.save
+
+binding.pry
+nil
