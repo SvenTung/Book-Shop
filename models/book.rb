@@ -50,9 +50,9 @@ class Book
     SqlRunner.run(sql, values)
   end
 
-  def self.find_by_name(name)
-    sql = 'SELECT * FROM books WHERE name = $1'
-    values = [@id]
+  def self.find_by_title(title)
+    sql = 'SELECT * FROM books WHERE title = $1'
+    values = [@title]
     book = SqlRunner.run(sql, values).first
     return Book.new(book)
   end
