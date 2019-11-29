@@ -1,4 +1,5 @@
 require_relative '../db/sql_runner'
+require_relative './author'
 
 class Book
 
@@ -16,7 +17,7 @@ class Book
     @pic_link = details['pic_link']
   end
 
-  def map_books(books_array)
+  def self.map_books(books_array)
     return books_array.map{|book_hash| Book.new(book_hash)}
   end
 
@@ -62,6 +63,13 @@ class Book
     values = [@id]
     book = SqlRunner.run(sql, values).first
     return Book.new(book)
+  end
+
+  def find_author
+    sql = 'SELECT * FROM authors WHERE id = $1'
+    values = [@author_id]
+    author = SqlRunner.run(sql, values).first
+    return Author.new(author)
   end
 
 end
