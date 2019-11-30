@@ -6,7 +6,7 @@ CREATE TABLE shops(
   id SERIAL PRIMARY KEY,
   name VARCHAR,
   address VARCHAR,
-  register_cash FLOAT
+  register_cash INT
 );
 
 CREATE TABLE authors(
@@ -21,7 +21,7 @@ CREATE TABLE books(
   genre VARCHAR,
   description VARCHAR,
   stock INT,
-  buying_cost FLOAT,
-  selling_price FLOAT,
-  pic_link VARCHAR
+  buying_cost INT,
+  selling_price INT,
+  picture_link VARCHAR
 );

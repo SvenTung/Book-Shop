@@ -4,7 +4,7 @@ require_relative './author'
 class Book
 
   attr_reader :id, :author_id
-  attr_accessor :title, :genre, :description, :stock, :buying_cost, :selling_price, :pic_link
+  attr_accessor :title, :genre, :description, :stock, :buying_cost, :selling_price, :picture_link
 
   def initialize(details)
     @id = details['id'].to_i
@@ -13,9 +13,9 @@ class Book
     @genre = details['genre']
     @description = details['description']
     @stock = details['stock'].to_i
-    @buying_cost = details['buying_cost'].to_f
-    @selling_price = details['selling_price'].to_f
-    @pic_link = details['pic_link']
+    @buying_cost = details['buying_cost'].to_i
+    @selling_price = details['selling_price'].to_i
+    @picture_link = details['picture_link']
   end
 
   def self.map_books(books_array)
@@ -23,8 +23,8 @@ class Book
   end
 
   def save()
-    sql = 'INSERT INTO books (title, author_id, genre, description, stock, buying_cost, selling_price, pic_link) VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING id'
-    values = [@title, @author_id, @genre, @description, @stock, @buying_cost, @selling_price, @pic_link]
+    sql = 'INSERT INTO books (title, author_id, genre, description, stock, buying_cost, selling_price, picture_link) VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING id'
+    values = [@title, @author_id, @genre, @description, @stock, @buying_cost, @selling_price, @picture_link]
     book = SqlRunner.run(sql, values).first()
     @id = book['id'].to_i
   end
@@ -41,8 +41,8 @@ class Book
   end
 
   def update()
-    sql = 'UPDATE books SET (title, author_id, genre, description, stock, buying_cost, selling_price, pic_link) = ($1, $2, $3, $4, $5, $6, $7, $8) WHERE id = $9'
-    values = [@title, @author_id, @genre, @description, @stock, @buying_cost, @selling_price, @pic_link, @id]
+    sql = 'UPDATE books SET (title, author_id, genre, description, stock, buying_cost, selling_price, picture_link) = ($1, $2, $3, $4, $5, $6, $7, $8) WHERE id = $9'
+    values = [@title, @author_id, @genre, @description, @stock, @buying_cost, @selling_price, @picture_link, @id]
     SqlRunner.run(sql, values)
   end
 

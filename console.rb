@@ -23,9 +23,9 @@ book1 = Book.new({
   'genre' => 'Horror',
   'description' => 'A horror novel that follows a young teenager called Darren and his encounter with a vampire at a freak show.',
   'stock' => 8,
-  'buying_cost' => 8.99,
-  'selling_price' => 10.99,
-  'pic_link' => ''
+  'buying_cost' => 899,
+  'selling_price' => 1099,
+  'picture_link' => ''
 })
 
 book1.save
@@ -36,9 +36,9 @@ book2 = Book.new({
   'genre' => 'Horror',
   'description' => 'Darren now a half-vampire finds himself in the world of the supernatural. Follow him and his adventures with Mr Crepsley as he comes to term with what he is now.',
   'stock' => 4,
-  'buying_cost' => 9.99,
-  'selling_price' => 11.99,
-  'pic_link' => ''
+  'buying_cost' => 999,
+  'selling_price' => 1199,
+  'picture_link' => ''
   })
 
 book2.save
@@ -49,9 +49,9 @@ book3 = Book.new({
   'genre' => 'Fantasy',
   'description' => 'This novel follows Arthur Penhaligon, a young teenager who receives a key and enters another world filled with other beings and enemies that seek to steal back the key.',
   'stock' => 7,
-  'buying_cost' => 7.99,
-  'selling_price' => 8.49,
-  'pic_link' => ''
+  'buying_cost' => 799,
+  'selling_price' => 849,
+  'picture_link' => ''
 })
 
 book3.save
