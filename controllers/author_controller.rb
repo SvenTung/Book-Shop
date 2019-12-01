@@ -10,6 +10,7 @@ end
 get '/authors/:id' do
   id = params[:id].to_i()
   @author = Author.find_by_id(id)
+  @books = @author.find_books
   erb(:"authors/show")
 end
 

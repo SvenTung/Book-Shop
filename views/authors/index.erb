@@ -1,0 +1,10 @@
+<h1>All known authors in database</h1>
+<hr />
+
+<% for author in @authors %>
+
+  <p>Name: <%= author.name %></p>
+  <p><a href="/authors/<%= author.id %>">Show author details</a></p>
+
+  <hr />
+<% end %>
