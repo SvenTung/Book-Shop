@@ -1,5 +1,5 @@
 <p>Name: <%= @author.name %></p>
-<p>Books by <%= @author.name %>:</p>
+<p>Books by author:</p>
 <% for book in @books %>
   <p><%= book.title %></p>
   <p><a href="/books/<%= book.id %>">Show book details</a></p>
