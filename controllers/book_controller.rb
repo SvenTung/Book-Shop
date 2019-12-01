@@ -34,18 +34,20 @@ get '/books/:id/delete' do
   erb(:"books/delete")
 end
 
+#edit
+get '/books/:id/edit' do
+  id = params[:id].to_i()
+  @book = Book.find_by_id(id)
+  @authors = Author.all
+  @genres = ["Adventure", "Adult", "Children", "Drama", "Fairytale",  "Fantasy", "Horror", "Mystery", "Romance", "Science fiction", "Young"]
+  erb(:"books/edit")
+end
+
 #create
 post '/books' do
   book = Book.new(params)
   book.save
   redirect "/books/#{params[:id]}"
-end
-
-#edit
-get '/books/:id/edit' do
-  id = params[:id].to_i()
-  @book = Book.find_by_id(id)
-  erb(:"books/edit")
 end
 
 #update
