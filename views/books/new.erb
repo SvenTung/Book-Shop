@@ -3,6 +3,7 @@
   <label for="title">Title:</label>
   <input required type="text" id="title" name="title" placeholder="Enter the title of the book">
 
+  <br>
   <label for="author_id">Author:</label>
   <select name="author_id" id = "author-id">
   <option selected disabled value="">Please select an author</option>
@@ -19,9 +20,11 @@
     <% end %>
   </select>
 
+  <br>
   <label for="description">Description:</label>
   <input required type="text" id = "description" name="description" placeholder="Enter a description of the book">
 
+  <br>
   <label for="stock">Stock count:</label>
   <input required type="number" id = "stock" name="stock" placeholder="How many are in stock?" min=0>
 
@@ -31,8 +34,10 @@
   <label for="selling_price">Selling price:</label>
   <input required type="number" id = "selling_price" name="selling_price" placeholder="How much is the book being sold for?" min=0>
 
+  <br>
   <label for="picture_link">Picture link:</label>
   <input type="text" id = "picture_link" name="picture_link" placeholder="">
 
+  <br>
   <input type="submit" value="Submit book details">
 </form>

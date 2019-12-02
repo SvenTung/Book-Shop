@@ -1,8 +1,9 @@
 <form action="/books/<%= @book.id %>" method="post">
 
-  <label for="title">Title</label>
+  <label for="title">Title:</label>
   <input required type="text" id="title" name="title" value="<%= @book.title %>">
 
+  <br>
   <label for="author_id">Author:</label>
   <select name="author_id" id = "author-id">
     <% for author in @authors %>
@@ -17,22 +18,24 @@
     <% end %>
   </select>
 
+  <br>
   <label for="description">Description:</label>
   <input required type="text" id = "description" name="description" value = "<%= @book.description %>">
 
+  <br>
   <label for="stock">Stock count:</label>
   <input required type="number" id = "stock" name="stock" value = "<%= @book.stock %>">
 
   <label for="buying_cost">Purchase cost:</label>
-  <input required type="text" id = "buying_cost" name="buying_cost" value = "<%= @book.buying_cost %>">
+  <input required type="number" id = "buying_cost" name="buying_cost" value = "<%= @book.buying_cost %>">
 
   <label for="selling_price">Selling price:</label>
-  <input required type="text" id = "selling_price" name="selling_price" value = "<%= @book.selling_price %>">
+  <input required type="number" id = "selling_price" name="selling_price" value = "<%= @book.selling_price %>">
 
+  <br>
   <label for="picture_link">Picture link:</label>
   <input type="text" id = "picture_link" name="picture_link" value = "<%= @book.picture_link %>">
 
-
-
+  <br>
   <input type="submit" value="Edit book details">
 </form>

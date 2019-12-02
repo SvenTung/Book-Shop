@@ -43,7 +43,7 @@ end
 post '/authors' do
   author = Author.new(params)
   author.save
-  redirect "Authors/#{author.id}"
+  redirect "authors/#{author.id}"
 end
 
 #update

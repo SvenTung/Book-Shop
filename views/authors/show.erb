@@ -1,5 +1,5 @@
-<p>Name: <%= @author.name %></p>
-<p>Books by author:</p>
+<h2><%= @author.name %></h2>
+<p>Books by <%= @author.name %>:</p>
 <table>
   <tr>
     <th>Title</th>
@@ -25,3 +25,6 @@
     </tr>
   <% end %>
 </table>
+
+<h3><a href="/authors/<%= @author.id%>/edit">Edit author details</a></h3>
+<h3><a href="/authors/<%= @author.id%>/delete">Remove author details from database</a></h3>

@@ -1,3 +1,24 @@
+input[type=text]{
+  width: 80%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+input:invalid{
+  background-color: #EF785B;
+  border-color: red;
+}
+
+input[type=text]:focus{
+  background-color: #E0DFD5;
+  border-color: none;
+}
+
+input[type=number]{
+  width: 25%;
+}
 
 #low-stock-show{
   background-color: yellow;
