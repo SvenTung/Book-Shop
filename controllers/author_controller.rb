@@ -6,6 +6,17 @@ get '/authors' do
   erb(:"authors/index")
 end
 
+#index
+get '/authors/A-Z' do
+  @authors = Author.all_alphabetically
+  erb(:"authors/A-Z")
+end
+
+#new
+get '/authors/new' do
+  erb(:"authors/new")
+end
+
 #show
 get '/authors/:id' do
   id = params[:id].to_i()
@@ -14,12 +25,38 @@ get '/authors/:id' do
   erb(:"authors/show")
 end
 
-#new
-get '/authors/new' do
-  erb(:"authors/new")
+#delete check
+get '/authors/:id/delete' do
+  id = params[:id].to_i()
+  @author = author.find_by_id(id)
+  erb(:"authors/delete")
+end
+
+#edit
+get '/author/:id/edit' do
+  id = params[:id].to_i()
+  @author = Author.find_by_id(id)
+  erb(:"authors/edit")
 end
 
 #create
-#edit
+post '/authors' do
+  author = Author.new(params)
+  author.save
+  redirect "Authors/#{author.id}"
+end
+
 #update
+post 'authors/:id' do
+  author = Author.new(params)
+  author.update
+  redirect "authors/#{params[:id]}"
+end
+
 #destory
+post '/authors/:id/delete' do
+  id = params[:id].to_i()
+  author = Author.find_by_id(id)
+  author.delete
+  redirect('/authors')
+end

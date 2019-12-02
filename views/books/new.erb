@@ -3,38 +3,36 @@
   <label for="title">Title:</label>
   <input required type="text" id="title" name="title" placeholder="Enter the title of the book">
 
-  <label for="author">Author:</label>
-  <input list="authors" placeholder="Please select an author">
-  <datalist name="author" id = "authors">
+  <label for="author_id">Author:</label>
+  <select name="author_id" id = "author-id">
+  <option selected disabled value="">Please select an author</option>
     <% for author in @authors %>
-      <option value="<%= author.name %>"><%= author.id %></option>
+      <option value="<%= author.id %>"><%= author.name %></option>
     <% end %>
-  </datalist>
+  </select>
 
   <label for="genre">Genre:</label>
-  <input list="genres" placeholder="Please select a genre">
-  <datalist name="genre" id = "genres">
+  <select name="genre" id = "genre">
+  <option selected disabled value="">Please select a genre</option>
     <% for genre in @genres %>
-      <option value="<%= genre %>"></option>
+      <option value="<%= genre %>"><%= genre %></option>
     <% end %>
-  </datalist>
+  </select>
 
   <label for="description">Description:</label>
   <input required type="text" id = "description" name="description" placeholder="Enter a description of the book">
 
   <label for="stock">Stock count:</label>
-  <input required type="number" id = "stock" name="stock" placeholder="How many are in stock?">
+  <input required type="number" id = "stock" name="stock" placeholder="How many are in stock?" min=0>
 
   <label for="buying_cost">Purchase cost:</label>
-  <input required type="text" id = "buying_cost" name="buying_cost" placeholder="How much was the book bought for?">
+  <input required type="number" id = "buying_cost" name="buying_cost" placeholder="How much was the book bought for?" min=0>
 
   <label for="selling_price">Selling price:</label>
-  <input required type="text" id = "selling_price" name="selling_price" placeholder="How much is the book being sold for?">
+  <input required type="number" id = "selling_price" name="selling_price" placeholder="How much is the book being sold for?" min=0>
 
   <label for="picture_link">Picture link:</label>
   <input type="text" id = "picture_link" name="picture_link" placeholder="">
-
-
 
   <input type="submit" value="Submit book details">
 </form>

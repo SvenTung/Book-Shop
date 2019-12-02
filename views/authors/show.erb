@@ -1,7 +1,27 @@
 <p>Name: <%= @author.name %></p>
 <p>Books by author:</p>
-<% for book in @books %>
-  <p><%= book.title %></p>
-  <p><a href="/books/<%= book.id %>">Show book details</a></p>
-  <hr />
-<% end %>
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Author</th>
+    <th>Genre</th>
+    <th>Description</th>
+    <th>Stock remaining</th>
+  </tr>
+
+  <% for book in @books %>
+    <tr>
+      <td><a href="/books/<%= book.id %>"><%= book.title %></a></td>
+      <td><%= book.find_author_name %></td>
+      <td><%= book.genre %></td>
+      <td><%= book.description %></td>
+      <% if book.stock == 0 %>
+        <td id = "no-stock"><%= book.stock %></td>
+      <% elsif book.stock <= 3 %>
+        <td id = "low-stock"><%= book.stock %></td>
+      <% else %>
+        <td><%= book.stock %></td>
+      <% end %>
+    </tr>
+  <% end %>
+</table>

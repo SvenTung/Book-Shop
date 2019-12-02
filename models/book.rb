@@ -30,7 +30,13 @@ class Book
   end
 
   def self.all()
-    sql = 'SELECT * FROM books'
+    sql = 'SELECT * FROM books ORDER BY id'
+    books_array = SqlRunner.run(sql)
+    return map_books(books_array)
+  end
+
+  def self.all_alphabetically
+    sql = 'SELECT * FROM books ORDER BY title'
     books_array = SqlRunner.run(sql)
     return map_books(books_array)
   end

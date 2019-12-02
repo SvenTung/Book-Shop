@@ -13,6 +13,18 @@ get '/books/table' do
   erb(:"books/index_table")
 end
 
+#index-alphabetically
+get '/books/A-Z' do
+  @books = Book.all_alphabetically
+  erb(:"books/A-Z/index")
+end
+
+#index-alphabetically
+get '/books/table/A-Z' do
+  @books = Book.all_alphabetically
+  erb(:"books/A-Z/index_table")
+end
+
 #new
 get '/books/new' do
   @authors = Author.all
@@ -47,7 +59,7 @@ end
 post '/books' do
   book = Book.new(params)
   book.save
-  redirect "/books/#{params[:id]}"
+  redirect "/books/#{book.id}"
 end
 
 #update
