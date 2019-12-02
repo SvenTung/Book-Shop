@@ -1,0 +1,6 @@
+<p>Title: <%= @book.title %></p>
+<p>Author: <%= @book.find_author_name %></p>
+<p>Stock left: <%= @book.stock %></p>
+<p>Purchase cost: £<%= @book.buying_cost.to_s.insert(-3, ".") %></p>
+<p>Selling price: £<%= @book.selling_price.to_s.insert(-3, ".") %></p>
+<p>Selling <%= @quantity %> costs: £<%= (@book.selling_price * @quantity).to_s.insert(-3, ".") %></p>

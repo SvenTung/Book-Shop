@@ -44,6 +44,21 @@ nav ul a:hover{
   width: 100%;
 }
 
+#buy-sell-form{
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  margin: auto;
+  width: 100%;
+}
+
+#buy-sell-form input{
+  display: inline;
+  margin: 8px;
+  width: auto;
+  padding: 8px;
+}
+
 label{
   font-weight: bold;
 }

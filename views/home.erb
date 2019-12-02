@@ -9,7 +9,7 @@
       <th>Stock remaining</th>
     </tr>
     <% for book in @books %>
-      <% if book.stock <= 3 %>
+      <% if book.stock <= 3 && book.stock != 0 %>
         <tr>
           <td><a href="/books/<%= book.id %>"><%= book.title %></a></td>
           <td><%= book.stock %></td>

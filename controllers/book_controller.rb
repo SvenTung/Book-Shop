@@ -34,27 +34,28 @@ end
 
 # buy book
 get '/books/buy' do
-  erb(:"books/buy")
+  @books = Book.all
+  erb(:"books/buy/buy")
 end
 
 post '/books/buy' do
-  quantity = params['quantity']
-  book = Book.find_by_title(params['title'])
-  book.buy_book(quantity)
-  redirect "books/#{book.id}"
+  @quantity = params[:quantity].to_i
+  @book = Book.find_by_title(params[:title])
+  @book.buy_book(@quantity)
+  erb(:"books/buy/confirmation")
 end
 
 # sell book
-
 get '/books/sell' do
-  erb(:"books/sell")
+  @books= Book.all
+  erb(:"books/sell/sell")
 end
 
 post '/books/sell' do
-  quantity = params['quantity']
-  book = Book.find_by_title(params['title'])
-  book.sell_book(quantity)
-  redirect "books/#{book.id}"
+  @quantity = params[:quantity].to_i
+  @book = Book.find_by_title(params[:title])
+  @book.sell_book(@quantity)
+  erb(:"books/sell/confirmation")
 end
 
 #show

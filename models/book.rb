@@ -100,4 +100,15 @@ class Book
     return author['name']
   end
 
+  def buy_book(quantity)
+    if (@buying_cost * quantity > Shop.get_total)
+    @stock += quantity
+    update()
+  end
+
+  def sell_book(quantity)
+    @stock -= quantity
+    update()
+  end
+
 end

@@ -1,0 +1,15 @@
+<form action="/books/buy" method="post">
+  <div id="buy-sell-form">
+    <label for="title">Title:</label>
+    <select name="title" id="title">
+      <% for book in @books %>
+      <option value="<%= book.title %>"><%= book.title %></option>
+      <% end %>
+    </select>
+    <br>
+    <label for="quantity">Quantity:</label>
+    <input required="required" type="number" id="quantity" name="quantity" value="1" min="1">
+    <br>
+    <input type="submit" value="Confirm book and quantity">
+  </div>
+</form>
