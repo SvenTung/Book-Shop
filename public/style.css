@@ -1,23 +1,72 @@
-input[type=text]{
-  width: 80%;
+input{
+  width:100%;
   padding: 12px 20px;
   margin: 8px 0;
   box-sizing: border-box;
+  border: 1px solid black;
+}
+
+label{
+  font-weight: bold;
+}
+
+body{
+  margin: 0;
+}
+
+#main-content{
+  margin: 8px;
+}
+
+nav{
+  display: flex;
+  justify-content: space-around;
+    background-color: #4F7CAC;
+}
+
+nav ul{
+  margin: 0;
+  padding: 0;
   overflow: hidden;
 }
 
+nav ul a{
+  display: inline-block;
+  padding: 14px 16px;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+}
+
+nav ul a:hover{
+  background-color: #304B68;
+}
+
+#drop-down{
+  text-align: right;
+}
+
+#number-inputs{
+  width: 100%;
+}
+
 input:invalid{
-  background-color: #EF785B;
+  background-color: #EF5B5B;
   border-color: red;
 }
 
 input[type=text]:focus{
-  background-color: #E0DFD5;
+  background-color: #C1C0B8;
   border-color: none;
 }
 
-input[type=number]{
-  width: 25%;
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  opacity: 1;
+}
+
+::placeholder{
+  color: #332F2D;
 }
 
 #low-stock-show{

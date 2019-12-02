@@ -1,43 +1,49 @@
 <form action="/books" method="post">
 
+  <div id="drop-down">
+    <label for="author_id">Author:</label>
+    <select name="author_id" id="author-id">
+      <option selected disabled value="">Please select an author</option>
+      <% for author in @authors %>
+        <option value="<%= author.id %>"><%= author.name %></option>
+      <% end %>
+    </select>
+
+    <label for="genre">Genre:</label>
+    <select name="genre" id="genre">
+      <option selected disabled value="">Please select a genre</option>
+      <% for genre in @genres %>
+        <option value="<%= genre %>"><%= genre %></option>
+      <% end %>
+    </select>
+  </div>
+
+  <hr/>
   <label for="title">Title:</label>
-  <input required type="text" id="title" name="title" placeholder="Enter the title of the book">
-
-  <br>
-  <label for="author_id">Author:</label>
-  <select name="author_id" id = "author-id">
-  <option selected disabled value="">Please select an author</option>
-    <% for author in @authors %>
-      <option value="<%= author.id %>"><%= author.name %></option>
-    <% end %>
-  </select>
-
-  <label for="genre">Genre:</label>
-  <select name="genre" id = "genre">
-  <option selected disabled value="">Please select a genre</option>
-    <% for genre in @genres %>
-      <option value="<%= genre %>"><%= genre %></option>
-    <% end %>
-  </select>
+  <input required="required" type="text" id="title" name="title" placeholder="Enter the title of the book">
 
   <br>
   <label for="description">Description:</label>
-  <input required type="text" id = "description" name="description" placeholder="Enter a description of the book">
+  <input required="required" type="text" id="description" name="description" placeholder="Enter a description of the book">
 
   <br>
-  <label for="stock">Stock count:</label>
-  <input required type="number" id = "stock" name="stock" placeholder="How many are in stock?" min=0>
-
-  <label for="buying_cost">Purchase cost:</label>
-  <input required type="number" id = "buying_cost" name="buying_cost" placeholder="How much was the book bought for?" min=0>
-
-  <label for="selling_price">Selling price:</label>
-  <input required type="number" id = "selling_price" name="selling_price" placeholder="How much is the book being sold for?" min=0>
+  <table id="number-inputs">
+    <tr>
+      <th> <label for="stock">Stock count:</label></th>
+      <th><label for="buying_cost">Purchase cost in pence:</label></th>
+      <th><label for="selling_price">Selling price in pence:</label></th>
+    </tr>
+    <tr>
+      <td><input required="required" type="number" id="stock" name="stock" value="0" min="0"</td>
+      <td><input required="required" type="number" id="buying_cost" name="buying_cost" value="0" min="0"</td>
+      <td><input required="required" type="number" id="selling_price" name="selling_price" value="0" min="0"</td>
+    </tr>
+  </table>
 
   <br>
-  <label for="picture_link">Picture link:</label>
-  <input type="text" id = "picture_link" name="picture_link" placeholder="">
+  <label for="picture_link">Picture URL link:</label>
+  <input type="text" id="picture_link" name="picture_link">
 
   <br>
-  <input type="submit" value="Submit book details">
+  <input type="submit" value="Add book details to database">
 </form>

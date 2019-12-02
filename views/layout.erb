@@ -11,14 +11,16 @@
     <nav>
       <ul>
         <a href="/">Home page</a>
-        <a href="/books">All books</a><a href=""></a>
-        <a href="/authors">All authors</a><a href=""></a>
+        <a href="/books">All books</a>
+        <a href="/authors">All authors</a>
         <a href="/books/new">Add book</a>
         <a href="/authors/new">Add author</a>
         <a href="/books/buy">Buy book</a>
         <a href="/books/sell">Sell book</a>
       </ul>
     </nav>
-  <%= yield %>
+    <div id="main-content">
+      <%= yield %>
+    </div>
   </body>
 </html>
