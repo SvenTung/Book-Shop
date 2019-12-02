@@ -1,13 +1,12 @@
 <h1>All books in the database</h1>
-<h2><a href="/books">List format</a></h2>
 
 <table>
   <tr>
-    <th>Title</th>
-    <th>Author</th>
-    <th>Genre</th>
+    <th><a href="/books/title/A-Z"><i class="arrow down"></i></a> Title <a href="/books/title/Z-A"><i class="arrow up"></i></a></th>
+    <th><a href="/books/author/A-Z"><i class="arrow down"></i></a> Author <a href="/books/author/Z-A"><i class="arrow up"></i></a></th>
+    <th><a href="/books/genre/A-Z"><i class="arrow down"></i></a> Genre <a href="/books/genre/Z-A"><i class="arrow up"></i></a></th>
     <th>Description</th>
-    <th>Stock remaining</th>
+    <th><a href="/books/stock/A-Z"><i class="arrow down"></i></a> Stock remaining <a href="/books/stock/Z-A"><i class="arrow up"></i></a></th>
   </tr>
 
   <% for book in @books %>

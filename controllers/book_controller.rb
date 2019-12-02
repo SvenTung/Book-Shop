@@ -7,22 +7,52 @@ get '/books' do
   erb(:"books/index")
 end
 
-#index_table
-get '/books/table' do
-  @books = Book.all
-  erb(:"books/index_table")
+#index sort by title
+get '/books/title/A-Z' do
+  @books = Book.sort_by_title
+  erb(:"books/index")
 end
 
-#index-alphabetically
-get '/books/A-Z' do
-  @books = Book.all_alphabetically
-  erb(:"books/A-Z/index")
+#index reverse sort by title
+get '/books/title/Z-A' do
+  @books = Book.sort_by_title.reverse
+  erb(:"books/index")
 end
 
-#index-alphabetically
-get '/books/table/A-Z' do
-  @books = Book.all_alphabetically
-  erb(:"books/A-Z/index_table")
+#index sort by author
+get '/books/author/A-Z' do
+  @books = Book.sort_by_author
+  erb(:"books/index")
+end
+
+#index reverse sort by author
+get '/books/author/Z-A' do
+  @books = Book.sort_by_author.reverse
+  erb(:"books/index")
+end
+
+#index sort by genre
+get '/books/genre/A-Z' do
+  @books = Book.sort_by_genre
+  erb(:"books/index")
+end
+
+#index reverse sort by genre
+get '/books/genre/Z-A' do
+  @books = Book.sort_by_genre.reverse
+  erb(:"books/index")
+end
+
+#index sort by stock
+get '/books/stock/A-Z' do
+  @books = Book.sort_by_stock
+  erb(:"books/index")
+end
+
+#index reverse sort by stock
+get '/books/stock/Z-A' do
+  @books = Book.sort_by_stock.reverse
+  erb(:"books/index")
 end
 
 #new

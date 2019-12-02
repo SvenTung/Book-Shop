@@ -1,15 +1,27 @@
-<h1>All books in database</h1>
-<h2><a href="/books/table">Table format</a></h2>
-<h2><a href="/books/A-Z">Sort alphabetically</a></h2>
-<hr />
+<h1>All books in the database</h1>
 
-<% for book in @books %>
+<table>
+  <tr>
+    <th><a href="/books/title/A-Z"><i class="arrow down"></i></a> Title <a href="/books/title/Z-A"><i class="arrow up"></i></a></th>
+    <th><a href="/books/author/A-Z"><i class="arrow down"></i></a> Author <a href="/books/author/Z-A"><i class="arrow up"></i></a></th>
+    <th><a href="/books/genre/A-Z"><i class="arrow down"></i></a> Genre <a href="/books/genre/Z-A"><i class="arrow up"></i></a></th>
+    <th>Description</th>
+    <th><a href="/books/stock/A-Z"><i class="arrow down"></i></a> Stock remaining <a href="/books/stock/Z-A"><i class="arrow up"></i></a></th>
+  </tr>
 
-  <p>Title: <%= book.title %></p>
-  <p>Author: <%= book.find_author_name %></p>
-  <p>Genre: <%= book.genre %></p>
-  <p><%= book.description %></p>
-  <p><a href="/books/<%= book.id %>">Show book details</a></p>
-
-  <hr />
-<% end %>
+  <% for book in @books %>
+    <tr>
+      <td><a href="/books/<%= book.id %>"><%= book.title %></a></td>
+      <td><%= book.find_author_name %></td>
+      <td><%= book.genre %></td>
+      <td><%= book.description %></td>
+      <% if book.stock == 0 %>
+        <td id = "no-stock"><%= book.stock %></td>
+      <% elsif book.stock <= 3 %>
+        <td id = "low-stock"><%= book.stock %></td>
+      <% else %>
+        <td><%= book.stock %></td>
+      <% end %>
+    </tr>
+  <% end %>
+</table>
