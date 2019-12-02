@@ -7,51 +7,15 @@ get '/books' do
   erb(:"books/index")
 end
 
-#index sort by title
-get '/books/title/A-Z' do
-  @books = Book.sort_by_title
+#index ascending sort
+get '/books/:category/A-Z' do
+  @books = Book.sort(params[:category]).reverse
   erb(:"books/index")
 end
 
-#index reverse sort by title
-get '/books/title/Z-A' do
-  @books = Book.sort_by_title.reverse
-  erb(:"books/index")
-end
-
-#index sort by author
-get '/books/author/A-Z' do
-  @books = Book.sort_by_author
-  erb(:"books/index")
-end
-
-#index reverse sort by author
-get '/books/author/Z-A' do
-  @books = Book.sort_by_author.reverse
-  erb(:"books/index")
-end
-
-#index sort by genre
-get '/books/genre/A-Z' do
-  @books = Book.sort_by_genre
-  erb(:"books/index")
-end
-
-#index reverse sort by genre
-get '/books/genre/Z-A' do
-  @books = Book.sort_by_genre.reverse
-  erb(:"books/index")
-end
-
-#index sort by stock
-get '/books/stock/A-Z' do
-  @books = Book.sort_by_stock
-  erb(:"books/index")
-end
-
-#index reverse sort by stock
-get '/books/stock/Z-A' do
-  @books = Book.sort_by_stock.reverse
+#index descending sort
+get '/books/:category/Z-A' do
+  @books = Book.sort(params[:category])
   erb(:"books/index")
 end
 

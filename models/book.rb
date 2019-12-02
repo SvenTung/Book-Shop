@@ -35,26 +35,12 @@ class Book
     return map_books(books_array)
   end
 
-  def self.sort_by_title
-    sql = 'SELECT * FROM books ORDER BY title'
-    books_array = SqlRunner.run(sql)
-    return map_books(books_array)
-  end
-
-  def self.sort_by_author
-    sql = 'SELECT books.* FROM books INNER JOIN authors ON books.author_id = authors.id ORDER BY authors.name'
-    books_array = SqlRunner.run(sql)
-    return map_books(books_array)
-  end
-
-  def self.sort_by_genre
-    sql = 'SELECT * FROM books ORDER BY genre'
-    books_array = SqlRunner.run(sql)
-    return map_books(books_array)
-  end
-
-  def self.sort_by_stock
-    sql = 'SELECT * FROM books ORDER BY stock DESC'
+  def self.sort(category)
+    if category == 'author'
+      sql = 'SELECT books.* FROM books INNER JOIN authors ON books.author_id = authors.id ORDER BY authors.name'
+    else
+      sql = 'SELECT * FROM books ORDER BY ' + category
+    end
     books_array = SqlRunner.run(sql)
     return map_books(books_array)
   end
