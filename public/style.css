@@ -1,15 +1,3 @@
-input{
-  width:100%;
-  padding: 12px 20px;
-  margin: 8px 0;
-  box-sizing: border-box;
-  border: 1px solid black;
-}
-
-label{
-  font-weight: bold;
-}
-
 body{
   margin: 0;
 }
@@ -50,6 +38,22 @@ nav ul a:hover{
   width: 100%;
 }
 
+label{
+  font-weight: bold;
+}
+
+::placeholder{
+  color: #332F2D;
+}
+
+input{
+  width:100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: 1px solid black;
+}
+
 input:invalid{
   background-color: #EF5B5B;
   border-color: red;
@@ -65,8 +69,17 @@ input[type=number]::-webkit-outer-spin-button {
   opacity: 1;
 }
 
-::placeholder{
-  color: #332F2D;
+input[type=submit]{
+  color: white;
+  background-color: #4CAF50;
+  text-align: center;
+  display: inline-block;
+  width: auto;
+}
+
+input[type=submit]:hover{
+  background-color: #2E6B30;
+  cursor: pointer;
 }
 
 #low-stock-show{
@@ -78,7 +91,6 @@ input[type=number]::-webkit-outer-spin-button {
   background-color: red;
   display: inline
 }
-
 
 #low-stock{
   background-color: yellow;

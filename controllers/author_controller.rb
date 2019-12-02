@@ -33,7 +33,7 @@ get '/authors/:id/delete' do
 end
 
 #edit
-get '/author/:id/edit' do
+get '/authors/:id/edit' do
   id = params[:id].to_i()
   @author = Author.find_by_id(id)
   erb(:"authors/edit")
