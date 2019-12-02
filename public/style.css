@@ -30,6 +30,11 @@ nav ul a:hover{
   background-color: #304B68;
 }
 
+#stock-tables table{
+  margin: 12px;
+  float: left;
+}
+
 #drop-down{
   text-align: right;
 }

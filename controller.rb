@@ -6,5 +6,6 @@ require_relative('./controllers/author_controller.rb')
 also_reload('./models/*')
 
 get '/' do
+  @books = Book.all()
   erb(:home)
 end

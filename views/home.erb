@@ -1,1 +1,36 @@
 <h1>Branson's Bookstore</h1>
+
+<div id="stock-tables">
+  <table>
+    <caption>Books low in stock</caption>
+
+    <tr>
+      <th>Title</th>
+      <th>Stock remaining</th>
+    </tr>
+    <% for book in @books %>
+      <% if book.stock <= 3 %>
+        <tr>
+          <td><a href="/books/<%= book.id %>"><%= book.title %></a></td>
+          <td><%= book.stock %></td>
+        </tr>
+      <% end %>
+    <% end %>
+  </table>
+
+  <table>
+    <caption>Books out of stock</caption>
+    <tr>
+      <th>Title</th>
+      <th>Stock remaining</th>
+    </tr>
+    <% for book in @books %>
+      <% if book.stock == 0 %>
+        <tr>
+          <td><a href="/books/<%= book.id %>"><%= book.title %></a></td>
+          <td><%= book.stock %></td>
+        </tr>
+      <% end %>
+    <% end %>
+  </table>
+</div>
