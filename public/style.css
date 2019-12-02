@@ -1,0 +1,23 @@
+
+#low-stock-show{
+  background-color: yellow;
+  display: inline
+}
+
+#no-stock-show{
+  background-color: red;
+  display: inline
+}
+
+
+#low-stock{
+  background-color: yellow;
+}
+
+#no-stock{
+  background-color: red;
+}
+
+table, th, td {
+  border: 1px solid black;
+}
