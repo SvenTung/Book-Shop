@@ -52,12 +52,12 @@ post '/books/sell' do
   erb(:"books/sell/confirmation")
 end
 
-get '/books/tags/add' do
+get '/tags/add' do
   @tags = Tag.all
   erb(:"tags/add")
 end
 
-post '/books/tags/attach' do
+post '/tags/attach' do
   binding.pry
   book = Book.find_by_id(params[:id])
   tags = params[:tags]
@@ -66,16 +66,16 @@ post '/books/tags/attach' do
 end
 
 #search tags
-get '/books/tags/search' do
+get '/tags/search' do
   @tags = Tag.all
-  erb(:"books/sort/tags/search")
+  erb(:"tags/search")
 end
 
 #display search
-post '/books/tags/display' do
+post '/tags/display' do
   tags = params[:tags]
   @books = Tags.find_books(tags)
-  erb(:"books/sort/tags/display")
+  erb(:"tags/display")
 end
 
 #show
