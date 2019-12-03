@@ -44,7 +44,6 @@ end
 
 #display search
 post '/tags/display' do
-  tags = params[:tags]
-  @books = Tags.find_books(tags)
-  erb(:"tags/display")
+  @books = Tag.find_books(params)
+  erb(:"books/index")
 end

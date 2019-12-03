@@ -50,6 +50,19 @@ class Tag
     return Book.map_books(books_array)
   end
 
+  def self.find_books(params)
+    result = []
+    tags_id = params.keys
+    for tag_id in tags_id
+      sql = 'SELECT books.* FROM books INNER JOIN links ON links.book_id = books.id WHERE links.tag_id = $1'
+      values = [tag_id]
+      books_array = SqlRunner.run(sql, values)
+      books_array = Book.map_books(books_array)
+      result.concat (books_array)
+    end
+    return result.uniq
+  end
+
   def count()
     return get_books().length
   end

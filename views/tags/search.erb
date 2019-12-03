@@ -1,0 +1,14 @@
+<form action="/tags/display" method="post">
+  <h2>Search tags</h2>
+
+  <h3>Tags:</h3>
+  <div id = "tags">
+    <% for tag in @tags %>
+      <label for="<%= tag.id %>"><%= tag.tag%></label>
+      <input type="checkbox" name="<%= tag.id %>" value="yes">
+    <% end %>
+  </div>
+
+  <input type="submit" value="Search for these tags">
+
+</form>
