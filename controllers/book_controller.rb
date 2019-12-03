@@ -9,20 +9,20 @@ end
 
 #index ascending sort
 get '/books/:category/A-Z' do
-  @books = Book.sort(params[:category]).reverse
+  @books = Book.sort(params[:category])
   erb(:"books/index")
 end
 
 #index descending sort
 get '/books/:category/Z-A' do
-  @books = Book.sort(params[:category])
+  @books = Book.sort(params[:category]).reverse
   erb(:"books/index")
 end
 
 #new
 get '/books/new' do
   @authors = Author.all
-  @genres = ["Adventure", "Drama", "Detective", "Fairytale",  "Fantasy", "Horror", "Mystery", "Novella", "Romance", "Science fiction", "Young"]
+  @genres = ["Adventure", "Drama", "Detective", "Fairytale",  "Fantasy", "Horror", "Mystery", "Novella", "Romance", "Science fiction"]
   erb(:"books/new")
 end
 
@@ -52,6 +52,32 @@ post '/books/sell' do
   erb(:"books/sell/confirmation")
 end
 
+get '/books/tags/add' do
+  @tags = Tag.all
+  erb(:"tags/add")
+end
+
+post '/books/tags/attach' do
+  binding.pry
+  book = Book.find_by_id(params[:id])
+  tags = params[:tags]
+  Link.attach(book, tags)
+  redirect("books/#{params[:id]}")
+end
+
+#search tags
+get '/books/tags/search' do
+  @tags = Tag.all
+  erb(:"books/sort/tags/search")
+end
+
+#display search
+post '/books/tags/display' do
+  tags = params[:tags]
+  @books = Tags.find_books(tags)
+  erb(:"books/sort/tags/display")
+end
+
 #show
 get '/books/:id' do
   id = params[:id].to_i()
@@ -71,7 +97,7 @@ get '/books/:id/edit' do
   id = params[:id].to_i()
   @book = Book.find_by_id(id)
   @authors = Author.all
-  @genres = ["Adventure", "Drama", "Detective", "Fairytale",  "Fantasy", "Horror", "Mystery", "Novella", "Romance", "Science fiction", "Young"]
+  @genres = ["Adventure", "Drama", "Detective", "Fairytale",  "Fantasy", "Horror", "Mystery", "Novella", "Romance", "Science fiction"]
   erb(:"books/edit")
 end
 

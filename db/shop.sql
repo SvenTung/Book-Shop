@@ -1,13 +1,7 @@
 DROP TABLE IF EXISTS books;
 DROP TABLE IF EXISTS authors;
-DROP TABLE IF EXISTS shops;
-
-CREATE TABLE shops(
-  id SERIAL PRIMARY KEY,
-  name VARCHAR,
-  address VARCHAR,
-  register_cash INT
-);
+DROP TABLE IF EXISTS tags;
+DROP TABLE IF EXISTS tag_link;
 
 CREATE TABLE authors(
   id SERIAL PRIMARY KEY,
@@ -24,4 +18,15 @@ CREATE TABLE books(
   buying_cost INT,
   selling_price INT,
   picture_link VARCHAR
+);
+
+CREATE TABLE tags(
+  id SERIAL PRIMARY KEY,
+  tag VARCHAR
+);
+
+CREATE TABLE tag_link(
+  id SERIAL PRIMARY KEY,
+  book_id INT REFERENCES books(id),
+  tag_id INT REFERENCES tag(id)
 );

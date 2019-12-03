@@ -188,5 +188,110 @@ book11 = Book.new({
 })
 book11.save
 
+tag1 = Tag.new({
+  'tag' => 'Action'
+})
+tag1.save
+
+tag2 = Tag.new({
+  'tag' => 'Adventure'
+})
+tag2.save
+
+tag3 = Tag.new({
+  'tag' => 'Classic'
+})
+tag3.save
+
+tag4 = Tag.new({
+  'tag' => 'Coming of Age'
+})
+tag4.save
+
+tag5 = Tag.new({
+  'tag' => 'Detective'
+})
+tag5.save
+
+tag6 = Tag.new({
+  'tag' => 'Fairytale'
+})
+tag6.save
+
+tag7 = Tag.new({
+  'tag' => 'Fantasy'
+})
+tag7.save
+
+tag8 = Tag.new({
+  'tag' => 'Fiction'
+})
+tag8.save
+
+tag9 = Tag.new({
+  'tag' => 'Futuristic'
+})
+tag9.save
+
+tag10 = Tag.new({
+  'tag' => 'Historical'
+})
+tag10.save
+
+tag11 = Tag.new({
+  'tag' => 'Horror'
+})
+tag11.save
+
+tag12 = Tag.new({
+  'tag' => 'Mystery'
+})
+tag12.save
+
+tag13 = Tag.new({
+  'tag' => 'Non-fiction'
+})
+tag13.save
+
+tag14 = Tag.new({
+  'tag' => 'Novel'
+})
+tag14.save
+
+tag15 = Tag.new({
+  'tag' => 'Paranormal'
+})
+tag15.save
+
+tag16 = Tag.new({
+  'tag' => 'Romance'
+})
+tag16.save
+
+tag17 = Tag.new({
+  'tag' => 'Science Fiction'
+})
+tag17.save
+
+tag18 = Tag.new({
+  'tag' => 'Series'
+})
+tag18.save
+
+tag19 = Tag.new({
+  'tag' => 'Teen'
+})
+tag19.save
+
+tag20 = Tag.new({
+  'tag' => 'Thriller'
+})
+tag20.save
+
+tag21 = Tag.new({
+  'tag' => 'Young-adult'
+})
+tag21.save
+
 binding.pry
 nil
