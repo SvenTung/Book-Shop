@@ -90,6 +90,11 @@ input[type=number]::-webkit-outer-spin-button {
   opacity: 1;
 }
 
+input[type=number]:focus{
+  background-color: #C1C0B8;
+  border-color: none;
+}
+
 input[type=submit]{
   color: white;
   background-color: #4CAF50;

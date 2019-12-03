@@ -22,7 +22,7 @@ end
 #new
 get '/books/new' do
   @authors = Author.all
-  @genres = ["Adventure", "Adult", "Children", "Drama", "Fairytale",  "Fantasy", "Horror", "Mystery", "Romance", "Science fiction", "Young"]
+  @genres = ["Adventure", "Drama", "Detective", "Fairytale",  "Fantasy", "Horror", "Mystery", "Novella", "Romance", "Science fiction", "Young"]
   erb(:"books/new")
 end
 
@@ -71,7 +71,7 @@ get '/books/:id/edit' do
   id = params[:id].to_i()
   @book = Book.find_by_id(id)
   @authors = Author.all
-  @genres = ["Adventure", "Adult", "Children", "Drama", "Fairytale",  "Fantasy", "Horror", "Mystery", "Romance", "Science fiction", "Young"]
+  @genres = ["Adventure", "Drama", "Detective", "Fairytale",  "Fantasy", "Horror", "Mystery", "Novella", "Romance", "Science fiction", "Young"]
   erb(:"books/edit")
 end
 
