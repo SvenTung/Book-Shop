@@ -68,7 +68,7 @@ book1 = Book.new({
   'stock' => 8,
   'buying_cost' => 899,
   'selling_price' => 1099,
-  'picture_link' => ''
+  'picture_link' => '/images/Cirque Du Freak.jpg'
 })
 book1.save
 
@@ -80,7 +80,7 @@ book2 = Book.new({
   'stock' => 4,
   'buying_cost' => 999,
   'selling_price' => 1199,
-  'picture_link' => ''
+  'picture_link' => "/images/The Vampire's Assistant.jpg"
   })
 book2.save
 
@@ -92,7 +92,7 @@ book3 = Book.new({
   'stock' => 7,
   'buying_cost' => 799,
   'selling_price' => 849,
-  'picture_link' => ''
+  'picture_link' => "/images/Mister Monday.jpg"
 })
 book3.save
 
@@ -104,7 +104,7 @@ book4 = Book.new({
   'stock' => 10,
   'buying_cost' => 899,
   'selling_price' => 949,
-  'picture_link' => ''
+  'picture_link' => "/images/Harry Potter 1.jpg"
 })
 book4.save
 
@@ -116,7 +116,7 @@ book5 = Book.new({
   'stock' => 15,
   'buying_cost' => 1099,
   'selling_price' => 1299,
-  'picture_link' => ''
+  'picture_link' => "/images/A Game of Thrones.jpg"
 })
 book5.save
 
@@ -128,7 +128,7 @@ book6 = Book.new({
   'stock' => 5,
   'buying_cost' => 699,
   'selling_price' => 799,
-  'picture_link' => ''
+  'picture_link' => "/images/Murder on the Orient Express.jpg"
 })
 book6.save
 
@@ -140,7 +140,7 @@ book7 = Book.new({
   'stock' => 2,
   'buying_cost' => 1800,
   'selling_price' => 2000,
-  'picture_link' => ''
+  'picture_link' => "/images/A Study in Scarlet.jpg"
 })
 book7.save
 
@@ -152,7 +152,7 @@ book8 = Book.new({
   'stock' => 6,
   'buying_cost' => 599,
   'selling_price' => 799,
-  'picture_link' => ''
+  'picture_link' => "/images/Of Mice and Men.jpg"
 })
 book8.save
 
@@ -164,7 +164,7 @@ book9 = Book.new({
   'stock' => 0,
   'buying_cost' => 699,
   'selling_price' => 899,
-  'picture_link' => ''
+  'picture_link' => "/images/Ender's Game.jpg"
 })
 book9.save
 
@@ -177,7 +177,7 @@ book10 = Book.new({
   'stock' => 4,
   'buying_cost' => 999,
   'selling_price' => 1099,
-  'picture_link' => ''
+  'picture_link' => "/images/IT.jpg"
 })
 book10.save
 
@@ -189,7 +189,7 @@ book11 = Book.new({
   'stock' => 6,
   'buying_cost' => 999,
   'selling_price' => 1299,
-  'picture_link' => ''
+  'picture_link' => "/images/Halo 1.jpg"
 })
 book11.save
 

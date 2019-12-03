@@ -1,8 +1,8 @@
 <h1>Branson's Bookstore</h1>
 <hr>
 
-<div id="stock-tables">
-  <table>
+<div id="low-stock-area">
+  <table id=low-stock-table>
     <caption>Books low in stock</caption>
 
     <tr>
@@ -18,8 +18,10 @@
       <% end %>
     <% end %>
   </table>
+</div>
 
-  <table>
+<div id="no-stock-area">
+  <table id=no-stock-table>
     <caption>Books out of stock</caption>
     <tr>
       <th>Title</th>

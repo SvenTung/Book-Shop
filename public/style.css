@@ -31,13 +31,51 @@ nav ul a:hover{
   background-color: #304B68;
 }
 
-#stock-tables table{
-  margin: 12px;
+#top-bar-title{
   float: left;
+  width: 50%;
+}
+
+#top-bar-title h2{
+  margin-top: 0px;
+}
+
+#low-stock-area{
+  float: left;
+  width: 50%;
+}
+
+#no-stock-area{
+  float: right;
+  width: 50%;
+}
+
+#low-stock-table{
+  margin: auto;
+}
+
+#no-stock-table{
+  margin: auto;
+}
+
+caption{
+  font-size: 18px;
+}
+
+#index-table td{
+  height: 38.8px;
+}
+
+a{
+  color: blue;
+  text-decoration: none;
 }
 
 #drop-down{
+  float:right;
   text-align: right;
+  width: 50%;
+  height: 47.92px;
 }
 
 #number-inputs{
@@ -130,8 +168,20 @@ input[type=submit]:hover{
   width:auto;
 }
 
-#picture{
+#display_picture{
   float: right;
+  height: 300px;
+  margin-left: 270px;
+  margin-right: 270px;
+}
+
+img{
+  height: 100%;
+}
+
+#show{
+  margin: 8px;
+  width: 600px;
 }
 
 i {
