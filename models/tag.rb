@@ -47,7 +47,11 @@ class Tag
     sql = 'SELECT books.* FROM books INNER JOIN links ON links.book_id = books.id WHERE links.tag_id = $1'
     values = [@id]
     books_array = SqlRunner.run(sql, values)
-    return Book.map_tags(tags_array)
+    return Book.map_books(books_array)
+  end
+
+  def count()
+    return get_books().length
   end
 
 end

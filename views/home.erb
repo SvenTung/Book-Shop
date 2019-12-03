@@ -13,7 +13,7 @@
       <% if book.stock <= 3 && book.stock != 0 %>
         <tr>
           <td><a href="/books/<%= book.id %>"><%= book.title %></a></td>
-          <td><%= book.stock %></td>
+          <td id="low-stock"><%= book.stock %></td>
         </tr>
       <% end %>
     <% end %>
@@ -29,7 +29,7 @@
       <% if book.stock == 0 %>
         <tr>
           <td><a href="/books/<%= book.id %>"><%= book.title %></a></td>
-          <td><%= book.stock %></td>
+          <td id="no-stock"><%= book.stock %></td>
         </tr>
       <% end %>
     <% end %>

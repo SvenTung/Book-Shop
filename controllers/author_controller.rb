@@ -28,7 +28,7 @@ end
 #delete check
 get '/authors/:id/delete' do
   id = params[:id].to_i()
-  @author = author.find_by_id(id)
+  @author = Author.find_by_id(id)
   erb(:"authors/delete")
 end
 
