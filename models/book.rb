@@ -111,8 +111,10 @@ class Book
   end
 
   def sell_book(quantity)
-    @stock -= quantity
-    update()
+    if @stock > quantity
+      @stock -= quantity
+      update()
+    end
   end
 
   def get_tags()

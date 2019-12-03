@@ -32,9 +32,9 @@
       <th><label for="selling_price">Selling price in pence:</label></th>
     </tr>
     <tr>
-      <td><input required="required" type="number" id="stock" name="stock" value="<%= @book.stock %>"></td>
-      <td><input required="required" type="number" id="buying_cost" name="buying_cost" value="<%= @book.buying_cost %>"></td>
-      <td><input required="required" type="number" id="selling_price" name="selling_price" value="<%= @book.selling_price %>"></td>
+      <td><input required="required" type="number" id="stock" name="stock" min = "0" value="<%= @book.stock %>"></td>
+      <td><input required="required" type="number" id="buying_cost" name="buying_cost" min = "0" value="<%= @book.buying_cost %>"></td>
+      <td><input required="required" type="number" id="selling_price" name="selling_price" min = "0" value="<%= @book.selling_price %>"></td>
     </tr>
   </table>
 

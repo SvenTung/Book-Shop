@@ -130,6 +130,10 @@ input[type=submit]:hover{
   width:auto;
 }
 
+#picture{
+  float: right;
+}
+
 i {
   border: solid black;
   border-width: 0 3px 3px 0;

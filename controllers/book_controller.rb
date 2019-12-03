@@ -2,6 +2,7 @@ require_relative '../models/book'
 require_relative '../models/author'
 require_relative '../models/tag'
 require_relative '../models/link'
+require 'pry'
 
 #index
 get '/books' do
@@ -50,7 +51,7 @@ end
 post '/books/sell' do
   @quantity = params[:quantity].to_i
   @book = Book.find_by_title(params[:title])
-  @book.sell_book(@quantity)
+  (@book.sell_book(@quantity))
   erb(:"books/sell/confirmation")
 end
 
