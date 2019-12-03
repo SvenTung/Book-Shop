@@ -1,0 +1,14 @@
+<form action="/tags/<%= @book.id %>/attach" method="post">
+  <h2>Add tags to <%= @book.title %></h2>
+
+  <h3>Tags:</h3>
+  <div id = "tags">
+    <% for tag in @tags %>
+      <label for="<%= tag.id %>"><%= tag.tag%></label>
+      <input type="checkbox" name="<%= tag.id %>" <%= "checked" if @book.get_tags.include?(tag.tag) %> value="yes">
+    <% end %>
+  </div>
+
+  <input type="submit" value="Add these tags to <%= @book.title %>">
+
+</form>

@@ -1,7 +1,7 @@
+DROP TABLE IF EXISTS links;
+DROP TABLE IF EXISTS tags;
 DROP TABLE IF EXISTS books;
 DROP TABLE IF EXISTS authors;
-DROP TABLE IF EXISTS tags;
-DROP TABLE IF EXISTS tag_links;
 
 CREATE TABLE authors(
   id SERIAL PRIMARY KEY,
@@ -25,8 +25,8 @@ CREATE TABLE tags(
   tag VARCHAR
 );
 
-CREATE TABLE tag_links(
+CREATE TABLE links(
   id SERIAL PRIMARY KEY,
-  book_id INT REFERENCES books(id),
-  tag_id INT REFERENCES tag(id)
+  book_id INT REFERENCES books(id) ON DELETE CASCADE,
+  tag_id INT REFERENCES tags(id) ON DELETE CASCADE
 );

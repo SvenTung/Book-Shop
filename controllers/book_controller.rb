@@ -1,5 +1,7 @@
 require_relative '../models/book'
 require_relative '../models/author'
+require_relative '../models/tag'
+require_relative '../models/link'
 
 #index
 get '/books' do
@@ -50,32 +52,6 @@ post '/books/sell' do
   @book = Book.find_by_title(params[:title])
   @book.sell_book(@quantity)
   erb(:"books/sell/confirmation")
-end
-
-get '/tags/add' do
-  @tags = Tag.all
-  erb(:"tags/add")
-end
-
-post '/tags/attach' do
-  binding.pry
-  book = Book.find_by_id(params[:id])
-  tags = params[:tags]
-  Link.attach(book, tags)
-  redirect("books/#{params[:id]}")
-end
-
-#search tags
-get '/tags/search' do
-  @tags = Tag.all
-  erb(:"tags/search")
-end
-
-#display search
-post '/tags/display' do
-  tags = params[:tags]
-  @books = Tags.find_books(tags)
-  erb(:"tags/display")
 end
 
 #show

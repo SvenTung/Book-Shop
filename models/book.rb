@@ -1,5 +1,6 @@
 require_relative '../db/sql_runner'
 require_relative './author'
+require 'pp'
 
 class Book
 
@@ -7,7 +8,7 @@ class Book
   attr_accessor :title, :genre, :description, :stock, :buying_cost, :selling_price, :picture_link
 
   def initialize(details)
-    @id = details['id'].to_i
+    @id = details['id'].to_i if details['id']
     @title = details['title']
     @author_id = details['author_id'].to_i
     @genre = details['genre']
@@ -112,6 +113,19 @@ class Book
   def sell_book(quantity)
     @stock -= quantity
     update()
+  end
+
+  def get_tags()
+    sql = 'SELECT tags.* FROM tags INNER JOIN links ON links.tag_id = tags.id WHERE links.book_id = $1'
+    values = [@id]
+    tags_array = SqlRunner.run(sql, values)
+    tag_objects = Tag.map_tags(tags_array)
+    book_tags = []
+      for object in tag_objects
+        book_tags.push(object.tag)
+      end
+      pp book_tags
+    return book_tags
   end
 
 end

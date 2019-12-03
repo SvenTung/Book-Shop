@@ -48,4 +48,5 @@ class TestBook < Minitest::Test
     @book1.sell_book(2)
     assert_equal(6, @book1.stock)
   end
+
 end

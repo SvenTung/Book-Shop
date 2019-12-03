@@ -1,9 +1,14 @@
 require_relative './models/author'
 require_relative './models/book'
+require_relative './models/tag'
+require_relative './models/link'
+
 require 'pry'
 
 Book.delete_all
 Author.delete_all
+Tag.delete_all
+Link.delete_all
 
 author1 = Author.new({
   'name' => 'Darren Shan'
@@ -292,6 +297,24 @@ tag21 = Tag.new({
   'tag' => 'Young-adult'
 })
 tag21.save
+
+link1 = Link.new({
+  'book_id' => book1.id,
+  'tag_id' => tag11.id
+})
+link1.save
+
+link2 = Link.new({
+  'book_id' => book1.id,
+  'tag_id' => tag4.id
+})
+link2.save
+
+link3 = Link.new({
+  'book_id' => book1.id,
+  'tag_id' => tag2.id
+})
+link3.save
 
 binding.pry
 nil

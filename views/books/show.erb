@@ -11,6 +11,7 @@
   <% end %>
 <p>Purchase cost: £<%= @book.buying_cost.to_s.insert(-3, ".") %></p>
 <p>Selling price: £<%= @book.selling_price.to_s.insert(-3, ".") %></p>
+<h3><a href="/tags/<%= @book.id%>/add">Add tags</a></h3>
 <h3><a href="/books/<%= @book.id%>/edit">Edit book details</a></h3>
 <h3><a href="/books/<%= @book.id%>/delete">Delete book details</a></h3>
 <hr />

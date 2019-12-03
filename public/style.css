@@ -126,6 +126,10 @@ input[type=submit]:hover{
   background-color: red;
 }
 
+#tags input[type=checkbox]{
+  width:auto;
+}
+
 i {
   border: solid black;
   border-width: 0 3px 3px 0;
