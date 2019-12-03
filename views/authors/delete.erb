@@ -1,0 +1,4 @@
+<h3>Are you sure that you want to remove <%= @author.name %> from the database?</h3>
+<form action="/authors/<%= @author.id %>/delete" method="post">
+  <input type="submit" value="Yes">
+</form>
