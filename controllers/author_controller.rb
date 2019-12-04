@@ -47,7 +47,7 @@ post '/authors' do
 end
 
 #update
-post 'authors/:id' do
+post '/authors/:id' do
   author = Author.new(params)
   author.update
   redirect "authors/#{params[:id]}"

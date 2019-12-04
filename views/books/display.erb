@@ -1,13 +1,21 @@
-<h1>All books in the database</h1>
+<h1>Displaying books with any of these tags:
+    <% for search in @search %>
+      <% if search == @search.last%>
+        <%= search.tag %>
+      <% else %>
+        <%= search.tag %>,
+      <% end %>
+    <% end %>
+</h1>
 <hr />
 <div id="index-table">
   <table>
     <tr>
-      <th>Title<br><a href="/books/title/Z-A"><i class="arrow up"></i></a>  <a href="/books/title/A-Z"><i class="arrow down"></i></a></th>
-      <th>Author<br><a href="/books/author/Z-A"><i class="arrow up"></i></a>  <a href="/books/author/A-Z"><i class="arrow down"></i></a></th>
-      <th>Genre<br><a href="/books/genre/Z-A"><i class="arrow up"></i></a>  <a href="/books/genre/A-Z"><i class="arrow down"></i></a></th>
+      <th>Title</th>
+      <th>Author</th>
+      <th>Genre</th>
       <th>Description</th>
-      <th>Stock remaining<br><a href="/books/stock/A-Z"><i class="arrow up"></i></a>  <a href="/books/stock/Z-A"><i class="arrow down"></i></a></th>
+      <th>Stock remaining</th>
     </tr>
 
     <% for book in @books %>

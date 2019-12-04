@@ -1,5 +1,13 @@
-<p>Title: <%= @book.title %></p>
-<p>Author: <%= @book.find_author_name %></p>
-<p>Stock: <%= @book.stock %></p>
-<p>Purchase cost: £<%= @book.buying_cost.to_s.insert(-3, ".") %></p>
-<p>Purchasing <%= @quantity %> costs: £<%= (@book.buying_cost * @quantity).to_s.insert(-3, ".") %></p>
+<h1>Purchase book</h1>
+
+<hr/>
+
+<div id = "display_picture">
+  <img src="<%= @book.picture_link %>">
+</div>
+
+<h2>Title: <%= @book.title %></h2>
+<h2>Author: <%= @book.find_author_name %></h2>
+<h2>Stock: <%= @book.stock %></h2>
+<h2>Purchase cost: £<%= @book.buying_cost.to_s.insert(-3, ".") %></h2>
+<h2>Purchasing <%= @quantity %> costs: £<%= (@book.buying_cost * @quantity).to_s.insert(-3, ".") %></h2>

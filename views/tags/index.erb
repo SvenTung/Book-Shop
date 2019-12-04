@@ -1,6 +1,8 @@
 <h1>All tags in the database</h1>
+<hr />
 
-<% for tag in @tags %>
-  <a href="/tags/display/<%= tag.id %>"><%= tag.tag %></a>
-  <p>(<%= tag.count %>)</p>
-<% end  %>
+<div id = "all-tags">
+  <% for tag in @tags %>
+    <p><a href="/tags/display/<%= tag.id %>"><%= tag.tag %></a>(<%= tag.count %>)</p>
+  <% end  %>
+</div>

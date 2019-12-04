@@ -1,5 +1,9 @@
 <form action="/books/<%= @book.id %>" method="post">
 
+  <div id="top-bar-title">
+    <h1>Edit book details</h1>
+  </div>
+
   <div id="drop-down">
     <label for="author_id">Author:</label>
     <select name="author_id" id="author-id">
@@ -16,7 +20,7 @@
     </select>
   </div>
 
-  <hr/>
+  <hr> <hr/>
   <label for="title">Title:</label>
   <input required="required" type="text" id="title" name="title" value="<%= @book.title %>">
 

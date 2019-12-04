@@ -23,7 +23,7 @@ class Author
   end
 
   def self.all()
-    sql = 'SELECT * FROM authors'
+    sql = 'SELECT * FROM authors ORDER BY id'
     authors_array = SqlRunner.run(sql)
     map_authors(authors_array)
   end

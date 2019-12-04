@@ -1,7 +1,8 @@
 <form action="/tags/display" method="post">
-  <h2>Search tags</h2>
+  <h1>Search tags</h1>
+  <hr />
 
-  <h3>Tags:</h3>
+  <h2>Tags:</h2>
   <div id = "tags">
     <% for tag in @tags %>
       <label for="<%= tag.id %>"><%= tag.tag%></label>

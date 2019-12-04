@@ -124,9 +124,8 @@ class Book
     tag_objects = Tag.map_tags(tags_array)
     book_tags = []
       for object in tag_objects
-        book_tags.push(object.tag)
+        book_tags.push(object)
       end
-      pp book_tags
     return book_tags
   end
 

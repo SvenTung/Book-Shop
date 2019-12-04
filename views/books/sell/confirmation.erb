@@ -1,10 +1,18 @@
-<p>Title: <%= @book.title %></p>
-<p>Author: <%= @book.find_author_name %></p>
-<p>Stock left: <%= @book.stock %></p>
-<p>Selling price: £<%= @book.selling_price.to_s.insert(-3, ".") %></p>
+<h1>Sell Book</h1>
+
+<hr/>
+
+<div id = "display_picture">
+  <img src="<%= @book.picture_link %>">
+</div>
+
+<h2>Title: <%= @book.title %></h2>
+<h2>Author: <%= @book.find_author_name %></h2>
+<h2>Stock left: <%= @book.stock %></h2>
+<h2>Selling price: £<%= @book.selling_price.to_s.insert(-3, ".") %></h2>
 <% if @book.stock >= @quantity %>
-  <p>Selling <%= @quantity %> costs: £<%= (@book.selling_price * @quantity).to_s.insert(-3, ".") %></p>
+  <h2>Selling <%= @quantity %> costs: £<%= (@book.selling_price * @quantity).to_s.insert(-3, ".") %></h2>
 <% else %>
-  <p>Attempted to sell <%= @quantity %> copies of this book.</p>
-  <p>There are not enough copies to complete this transaction.</p>
+  <h2>Attempted to sell <%= @quantity %> copies of this book.</h2>
+  <h2>There are not enough copies to complete this transaction.</h2>
 <% end %>

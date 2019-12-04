@@ -59,6 +59,7 @@ end
 get '/books/:id' do
   id = params[:id].to_i()
   @book = Book.find_by_id(id)
+  @tags = @book.get_tags
   erb(:"books/show")
 end
 
