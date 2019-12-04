@@ -46,14 +46,14 @@ end
 get '/tags/display/:id' do
   @tag = Tag.find_by_id(params[:id])
   @books = @tag.get_books()
-  erb(:"books/display1")
+  erb(:"tags/display1")
 end
 
 #display sort
 get '/tags/display/:id/:category/A-Z' do
   @tag = Tag.find_by_id(params[:id])
   @books = @tag.sort_books(params[:category])
-  erb(:"books/display1")
+  erb(:"tags/display1")
 end
 
 #display sort reversed
