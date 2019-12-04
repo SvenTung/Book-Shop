@@ -1,6 +1,5 @@
 require_relative '../db/sql_runner'
 require_relative './author'
-require 'pp'
 
 class Book
 
@@ -24,8 +23,12 @@ class Book
   end
 
   def save()
-    sql = 'INSERT INTO books (title, author_id, genre, description, stock, buying_cost, selling_price, picture_link) VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING id'
-    values = [@title, @author_id, @genre, @description, @stock, @buying_cost, @selling_price, @picture_link]
+    sql = 'INSERT INTO books (title, author_id, genre,
+    description, stock, buying_cost, selling_price, picture_link)
+    VALUES ($1, $2, $3, $4, $5, $6, $7, $8)
+    RETURNING id'
+    values = [@title, @author_id, @genre, @description,
+    @stock, @buying_cost, @selling_price, @picture_link]
     book = SqlRunner.run(sql, values).first()
     @id = book['id'].to_i
   end
@@ -38,9 +41,13 @@ class Book
 
   def self.sort(category)
     if category == 'author'
-      sql = 'SELECT books.* FROM books INNER JOIN authors ON books.author_id = authors.id ORDER BY authors.name'
+      sql = 'SELECT books.* FROM books
+      INNER JOIN authors
+      ON books.author_id = authors.id
+      ORDER BY authors.name'
     else
-      sql = 'SELECT * FROM books ORDER BY ' + category
+      sql = 'SELECT * FROM books
+      ORDER BY ' + category
     end
     books_array = SqlRunner.run(sql)
     return map_books(books_array)
@@ -52,8 +59,14 @@ class Book
   end
 
   def update()
-    sql = 'UPDATE books SET (title, author_id, genre, description, stock, buying_cost, selling_price, picture_link) = ($1, $2, $3, $4, $5, $6, $7, $8) WHERE id = $9'
-    values = [@title, @author_id, @genre, @description, @stock, @buying_cost, @selling_price, @picture_link, @id]
+    sql = 'UPDATE books SET
+    (title, author_id, genre, description, stock,
+    buying_cost, selling_price, picture_link)
+     = ($1, $2, $3, $4, $5, $6, $7, $8)
+     WHERE id = $9'
+    values = [@title, @author_id, @genre, @description,
+    @stock, @buying_cost, @selling_price, @picture_link,
+    @id]
     SqlRunner.run(sql, values)
   end
 
@@ -85,7 +98,8 @@ class Book
   end
 
   def find_other_books_in_same_genre
-    sql = 'SELECT * FROM books WHERE genre = $1 EXCEPT SELECT * FROM books WHERE id = $2'
+    sql = 'SELECT * FROM books WHERE genre = $1
+    EXCEPT SELECT * FROM books WHERE id = $2'
     values = [@genre, @id]
     books_array = SqlRunner.run(sql, values)
     return Book.map_books(books_array)
@@ -118,7 +132,8 @@ class Book
   end
 
   def get_tags()
-    sql = 'SELECT tags.* FROM tags INNER JOIN links ON links.tag_id = tags.id WHERE links.book_id = $1'
+    sql = 'SELECT tags.* FROM tags INNER JOIN links
+    ON links.tag_id = tags.id WHERE links.book_id = $1'
     values = [@id]
     tags_array = SqlRunner.run(sql, values)
     tag_objects = Tag.map_tags(tags_array)

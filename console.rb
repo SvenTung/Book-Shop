@@ -64,7 +64,9 @@ book1 = Book.new({
   'title' => 'Cirque Du Freak',
   'author_id' => author1.id,
   'genre' => 'Horror',
-  'description' => 'A horror novel that follows a young teenager called Darren and his encounter with a vampire at a freak show.',
+  'description' => 'A horror novel that follows
+  a young teenager called Darren and his encounter
+  with a vampire at a freak show.',
   'stock' => 8,
   'buying_cost' => 899,
   'selling_price' => 1099,
@@ -76,7 +78,10 @@ book2 = Book.new({
   'title' => "The Vampire's Assistant",
   'author_id' => author1.id,
   'genre' => 'Horror',
-  'description' => 'Darren now a half-vampire finds himself in the world of the supernatural. Follow him and his adventures with Mr Crepsley as he comes to term with what he is now.',
+  'description' => 'Darren now a half-vampire finds
+  himself in the world of the supernatural. Follow him
+  and his adventures with Mr Crepsley as he comes to
+  term with what he is now.',
   'stock' => 4,
   'buying_cost' => 999,
   'selling_price' => 1199,
@@ -88,7 +93,10 @@ book3 = Book.new({
   'title' => 'Mister Monday',
   'author_id' => author2.id,
   'genre' => 'Fantasy',
-  'description' => 'This novel follows Arthur Penhaligon, a young teenager who receives a key and enters another world filled with other beings and enemies that seek to steal back the key.',
+  'description' => 'This novel follows Arthur Penhaligon,
+  a young teenager who receives a key and enters another
+  world filled with other beings and enemies that
+  seek to steal back the key.',
   'stock' => 7,
   'buying_cost' => 799,
   'selling_price' => 849,
@@ -100,7 +108,9 @@ book4 = Book.new({
   'title' => "Harry Potter and The Philosopher's Stone",
   'author_id' => author3.id,
   'genre' => 'Fantasy',
-  'description' => 'Harry Potter an orphan who stays with his relatives finds out that he is a wizard and enters a wizarding school called Hogwarts.',
+  'description' => 'Harry Potter an orphan who stays
+  with his relatives finds out that he is a wizard and
+  enters a wizarding school called Hogwarts.',
   'stock' => 10,
   'buying_cost' => 899,
   'selling_price' => 949,
@@ -112,7 +122,9 @@ book5 = Book.new({
   'title' => 'A Game of Thrones',
   'author_id' => author4.id,
   'genre' => 'Fantasy',
-  'description' => 'Many families and houses in Westeros seek political power through subterfuge and blackmail.',
+  'description' => 'Many families and houses in
+  Westeros seek political power through subterfuge
+  and blackmail.',
   'stock' => 15,
   'buying_cost' => 1099,
   'selling_price' => 1299,
@@ -124,7 +136,9 @@ book6 = Book.new({
   'title' => 'Murder on the Orient Express',
   'author_id' => author5.id,
   'genre' => 'Mystery',
-  'description' => 'Poiret, a famous detective, is on his way home to London on Orient Express when a murder happens on the train.',
+  'description' => 'Poiret, a famous detective,
+  is on his way home to London on Orient Express
+when a murder happens on the train.',
   'stock' => 5,
   'buying_cost' => 699,
   'selling_price' => 799,
@@ -136,7 +150,9 @@ book7 = Book.new({
   'title' => 'A Study in Scarlett',
   'author_id' => author6.id,
   'genre' => 'Detective',
-  'description' => 'The first book about Sherlock Holmes and his detective adventures with Dr. John Watson.',
+  'description' => 'The first book about Sherlock
+  Holmes and his detective adventures with
+  Dr. John Watson.',
   'stock' => 2,
   'buying_cost' => 1800,
   'selling_price' => 2000,
@@ -148,7 +164,9 @@ book8 = Book.new({
   'title' => 'Of Mice and Men',
   'author_id' => author7.id,
   'genre' => 'Novella',
-  'description' => 'This novella follows George and Lennie and their travels to find work during The Great Depression.',
+  'description' => 'This novella follows George and
+  Lennie and their travels to find work during
+  The Great Depression.',
   'stock' => 6,
   'buying_cost' => 599,
   'selling_price' => 799,
@@ -160,7 +178,10 @@ book9 = Book.new({
   'title' => "Ender's Game",
   'author_id' => author8.id,
   'genre' => 'Science fiction',
-  'description' => 'Set in a futuristic time-period where humans are at war with an insectoid species. Children, including the protagonist, are trained from a young age in war games.',
+  'description' => 'Set in a futuristic time-period
+  where humans are at war with an insectoid species.
+  Children, including the protagonist, are trained
+  from a young age in war games.',
   'stock' => 0,
   'buying_cost' => 699,
   'selling_price' => 899,
@@ -173,7 +194,9 @@ book10 = Book.new({
   'title' => 'IT',
   'author_id' => author9.id,
   'genre' => 'Horror',
-  'description' => 'This story follows 7 children in the town of Derry while they are terrorized by an evil entity known as Pennywise.',
+  'description' => 'This story follows 7 children
+  in the town of Derry while they are terrorized
+  by an evil entity known as Pennywise.',
   'stock' => 4,
   'buying_cost' => 999,
   'selling_price' => 1099,
@@ -185,7 +208,10 @@ book11 = Book.new({
   'title' => 'Halo: The Fall of Reach',
   'author_id' => author10.id,
   'genre' => 'Science Fiction',
-  'description' => 'Set in a futuristic space-age setting John, the protagonist, is 1 of 150 children that possess a rare genetic marker that makes them ideal for a new super soldier program.',
+  'description' => 'Set in a futuristic space-age setting.
+  John, the protagonist, is 1 of 150 children that
+  possess a rare genetic marker that makes them
+  ideal for a new super soldier program.',
   'stock' => 6,
   'buying_cost' => 999,
   'selling_price' => 1299,

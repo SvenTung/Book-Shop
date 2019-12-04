@@ -51,7 +51,8 @@ class Tag
   end
 
   def get_books()
-    sql = 'SELECT books.* FROM books INNER JOIN links ON links.book_id = books.id WHERE links.tag_id = $1'
+    sql = 'SELECT books.* FROM books INNER JOIN links
+    ON links.book_id = books.id WHERE links.tag_id = $1'
     values = [@id]
     books_array = SqlRunner.run(sql, values)
     return Book.map_books(books_array)
@@ -59,9 +60,14 @@ class Tag
 
   def sort_books(category)
     if category == 'author'
-      sql = 'SELECT books.* FROM books INNER JOIN links ON links.book_id = books.id INNER JOIN authors ON books.author_id = authors.id WHERE links.tag_id = $1 ORDER BY authors.name'
+      sql = 'SELECT books.* FROM books INNER JOIN links ON
+      links.book_id = books.id INNER JOIN authors ON
+      books.author_id = authors.id WHERE links.tag_id = $1
+      ORDER BY authors.name'
     else
-      sql = 'SELECT books.* FROM books INNER JOIN links ON links.book_id = books.id WHERE links.tag_id = $1 ORDER BY ' + category
+      sql = 'SELECT books.* FROM books INNER JOIN links ON
+      links.book_id = books.id WHERE links.tag_id = $1
+      ORDER BY ' + category
     end
     values = [@id]
     books_array = SqlRunner.run(sql, values)
@@ -72,7 +78,9 @@ class Tag
     result = []
     tags_id = params.keys
     for tag_id in tags_id
-      sql = 'SELECT books.* FROM books INNER JOIN links ON links.book_id = books.id WHERE links.tag_id = $1'
+      sql = 'SELECT books.* FROM books INNER JOIN
+      links ON links.book_id = books.id
+      WHERE links.tag_id = $1'
       values = [tag_id]
       books_array = SqlRunner.run(sql, values)
       books_array = Book.map_books(books_array)

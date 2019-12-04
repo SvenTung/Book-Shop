@@ -60,13 +60,12 @@ end
 get '/tags/display/:id/:category/Z-A' do
   @tag = Tag.find_by_id(params[:id])
   @books = @tag.sort_books(params[:category]).reverse
-  erb(:"books/display1")
+  erb(:"tags/display1")
 end
 
 #display search
 post '/tags/display' do
   @books = Tag.find_books(params)
-  binding.pry
   @search = Tag.get_tags(params)
-  erb(:"books/display")
+  erb(:"tags/display")
 end

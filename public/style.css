@@ -12,13 +12,11 @@ nav{
   justify-content: space-around;
     background-color: #4F7CAC;
 }
-
 nav ul{
   margin: 0;
   padding: 0;
   overflow: hidden;
 }
-
 nav ul a{
   display: inline-block;
   padding: 14px 16px;
@@ -26,7 +24,6 @@ nav ul a{
   text-align: center;
   text-decoration: none;
 }
-
 nav ul a:hover{
   background-color: #304B68;
 }
