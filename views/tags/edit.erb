@@ -5,7 +5,7 @@
   <div id = "tags">
     <% for tag in @tags %>
       <label for="<%= tag.id %>"><%= tag.tag%></label>
-      <input type="checkbox" name="<%= tag.id %>" <%= "checked" if @book.get_tags.include?(tag.tag) %> value="yes">
+      <input type="checkbox" name="<%= tag.id %>" <%= "checked" if @book.get_tag_names.include?(tag.tag) %>  value="yes">
     <% end %>
   </div>
 

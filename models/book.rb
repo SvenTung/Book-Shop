@@ -144,4 +144,17 @@ class Book
     return book_tags
   end
 
+  def get_tag_names()
+    sql = 'SELECT tags.* FROM tags INNER JOIN links
+    ON links.tag_id = tags.id WHERE links.book_id = $1'
+    values = [@id]
+    tags_array = SqlRunner.run(sql, values)
+    tag_objects = Tag.map_tags(tags_array)
+    book_tags = []
+      for object in tag_objects
+        book_tags.push(object.tag)
+      end
+    return book_tags
+  end
+
 end
