@@ -35,6 +35,7 @@ get '/books/buy' do
   erb(:"books/buy/buy")
 end
 
+#post route for buy book
 post '/books/buy' do
   @quantity = params[:quantity].to_i
   @book = Book.find_by_title(params[:title])
@@ -48,6 +49,7 @@ get '/books/sell' do
   erb(:"books/sell/sell")
 end
 
+# post route for sell book
 post '/books/sell' do
   @quantity = params[:quantity].to_i
   @book = Book.find_by_title(params[:title])

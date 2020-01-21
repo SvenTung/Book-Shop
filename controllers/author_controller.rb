@@ -32,21 +32,21 @@ get '/authors/:id/delete' do
   erb(:"authors/delete")
 end
 
-#edit
+#edit author (requires an author_id)
 get '/authors/:id/edit' do
   id = params[:id].to_i()
   @author = Author.find_by_id(id)
   erb(:"authors/edit")
 end
 
-#create
+#create author (requires an author_name)
 post '/authors' do
   author = Author.new(params)
   author.save
   redirect "authors/#{author.id}"
 end
 
-#update
+#update author (requires an author_id)
 post '/authors/:id' do
   author = Author.new(params)
   author.update

@@ -9,13 +9,13 @@ get '/tags/index' do
   erb(:"tags/index")
 end
 
-#new
+#new tag
 get '/tags/new' do
   @tags = Tag.all
   erb(:"tags/new")
 end
 
-#create
+#create tag
 post '/tags' do
   tag = Tag.new(params)
   tag.save

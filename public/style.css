@@ -10,7 +10,7 @@ body{
 nav{
   display: flex;
   justify-content: space-around;
-    background-color: #4F7CAC;
+  background-color: #4F7CAC;
 }
 nav ul{
   margin: 0;
